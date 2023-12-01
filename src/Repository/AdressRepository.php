@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Address;
+use App\Entity\Adress;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Address>
+ * @extends ServiceEntityRepository<Adress>
  *
- * @method Address|null find($id, $lockMode = null, $lockVersion = null)
- * @method Address|null findOneBy(array $criteria, array $orderBy = null)
- * @method Address[]    findAll()
- * @method Address[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Adress|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Adress|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Adress[]    findAll()
+ * @method Adress[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AddressRepository extends ServiceEntityRepository
+class AdressRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Address::class);
+        parent::__construct($registry, Adress::class);
     }
 
-    public function save(Address $entity, bool $flush = false): void
+    public function save(Adress $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class AddressRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Address $entity, bool $flush = false): void
+    public function remove(Adress $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class AddressRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Address[] Returns an array of Address objects
+//     * @return Adress[] Returns an array of Adress objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class AddressRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Address
+//    public function findOneBySomeField($value): ?Adress
 //    {
 //        return $this->createQueryBuilder('a')
 //            ->andWhere('a.exampleField = :val')

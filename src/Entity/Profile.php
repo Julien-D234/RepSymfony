@@ -20,8 +20,8 @@ class Profile
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $dateBirth = null;
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $dateBirth = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $coverPicture = null;
@@ -32,9 +32,23 @@ class Profile
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    
     #[ORM\OneToOne(inversedBy: 'profile', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $user = null;
+    private ?Tp4Bd $user = null;
+
+    public function getUser(): ?Tp4Bd
+    {
+        return $this->user;
+    }
+
+    public function setUser(Tp4Bd $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
 
     public function getId(): ?int
     {
@@ -65,12 +79,12 @@ class Profile
         return $this;
     }
 
-    public function getDateBirth(): ?\DateTimeInterface
+    public function getDateBirth(): ?\DateTimeImmutable
     {
         return $this->dateBirth;
     }
 
-    public function setDateBirth(?\DateTimeInterface $dateBirth): self
+    public function setDateBirth(?\DateTimeImmutable $dateBirth): self
     {
         $this->dateBirth = $dateBirth;
 
@@ -113,15 +127,4 @@ class Profile
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 }
