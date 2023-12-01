@@ -112,12 +112,12 @@ class Adress
         return $this;
     }
 
-    public function getUser(): ?tp4bd
+    public function getTp4Bd(): ?tp4bd
     {
         return $this->user;
     }
 
-    public function setUser(?tp4bd $user): self
+    public function setTp4Bd(?tp4bd $user): self
     {
         $this->user = $user;
 

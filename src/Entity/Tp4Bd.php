@@ -83,7 +83,7 @@ class Tp4Bd
     {
         if (!$this->adresses->contains($adress)) {
             $this->adresses->add($adress);
-            $adress->setUser($this);
+            $adress->setTp4Bd($this);
         }
 
         return $this;
@@ -93,8 +93,8 @@ class Tp4Bd
     {
         if ($this->adresses->removeElement($adress)) {
             // set the owning side to null (unless already changed)
-            if ($adress->getUser() === $this) {
-                $adress->setUser(null);
+            if ($adress->getTp4Bd() === $this) {
+                $adress->setTp4Bd(null);
             }
         }
 

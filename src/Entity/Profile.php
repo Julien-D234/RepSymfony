@@ -37,12 +37,12 @@ class Profile
     #[ORM\JoinColumn(nullable: false)]
     private ?Tp4Bd $user = null;
 
-    public function getUser(): ?Tp4Bd
+    public function getTp4Bd(): ?Tp4Bd
     {
         return $this->user;
     }
 
-    public function setUser(Tp4Bd $user): self
+    public function setTp4Bd(Tp4Bd $user): self
     {
         $this->user = $user;
 

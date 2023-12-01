@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use Faker\Factory;
-use App\Entity\User;
 use DateTimeImmutable;
 use App\Entity\Adress;
 use App\Entity\Article;
@@ -26,9 +25,9 @@ class BlogFixtures extends Fixture
             // on pass par cette instruction intermédiaire car le fakerphp ne peut pas créer directement des DataTimeImmutable
             $dateU = DateTimeImmutable::createFromMutable($faker->dateTime());
             $user = (new Tp4Bd())->setTp4Bd($faker->name())
-                                ->setPassword(sha1("leMotDePasse"))
-                                ->setCreatedAt($dateU)
-                                ->setProfile(NULL);
+                                 ->setPassword(sha1("leMotDePasse"))
+                                 ->setCreatedAt($dateU)
+                                 ->setProfile(NULL);
             // le persist fait "l'insert" de cet user en BD 
             $manager->persist($user);
 
