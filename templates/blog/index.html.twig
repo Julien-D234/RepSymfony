@@ -4,9 +4,9 @@
 
 {% block body %}
     {% for article in articles %}
-        <img src={{ article.imagUrl }} width="300" height="300" alt="Image de l'article : {{ article.title }}"> <BR>
+        <img src={{ article.imageUrl }} width="300" height="300" alt="Image de l'article : {{ article.title }}"> <BR>
         <img src={{ article.author.profile.picture }} width="50" height="50" alt="image de profile de {{ article.author.name }}">
         <h2> {{ article.title }} </h5>
-             {{ article.createdAt | date("d/m/Y") }}<BR>
+             {{ article.createdAt | date("d/m/Y") }} <BR>
     {% endfor %}    
 {% endblock %}
