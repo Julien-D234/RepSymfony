@@ -45,10 +45,6 @@ class BlogController extends AbstractController
     {
         $content = "Hello World !";
         return new Response($content, Response::HTTP_OK);
-    }
-
-    
-
-    
+    }   
 
 }
