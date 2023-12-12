@@ -4,6 +4,7 @@
 
 {% block body %}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     {% for article in articles %}
         <img src={{ article.imageUrl }} width="300" height="300" alt="Image de l'article : {{ article.title }}"> <BR>
         <img src={{ article.author.profile.picture }} width="50" height="50" alt="image de profile de {{ article.author.name }}">
@@ -11,6 +12,8 @@
              {{ article.createdAt | date("d/m/Y") }} <BR>
     {% endfor %}    
 =======
+=======
+>>>>>>> Stashed changes
     <div class="articles">
         {% for article in articles %}
             <a href="{{path('app_single_article', {'slug': article.slug} ) }}" class="article-item">
@@ -32,5 +35,8 @@
             </div>
         {% endfor %}   
     </div> 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 {% endblock %}
