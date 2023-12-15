@@ -3,8 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\ArtisteRepository;
+<<<<<<< HEAD
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+=======
+>>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,6 +34,7 @@ class Artiste
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
 
+<<<<<<< HEAD
     #[ORM\Column()]
     private ?string $description = null;
 
@@ -46,6 +50,11 @@ class Artiste
         $this->chanson = new ArrayCollection();
     }
 
+=======
+    #[ORM\Column(length: 255)]
+    private ?string $description = null;
+
+>>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
     public function getId(): ?int
     {
         return $this->id;
@@ -122,6 +131,7 @@ class Artiste
 
         return $this;
     }
+<<<<<<< HEAD
 
     public function getType(): ?Type
     {
@@ -158,4 +168,6 @@ class Artiste
 
         return $this;
     }
+=======
+>>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
 }

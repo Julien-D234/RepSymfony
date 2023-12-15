@@ -3,6 +3,20 @@
 {% block title %} The Blog {% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    {% for article in articles %}
+        <img src={{ article.imageUrl }} width="300" height="300" alt="Image de l'article : {{ article.title }}"> <BR>
+        <img src={{ article.author.profile.picture }} width="50" height="50" alt="image de profile de {{ article.author.name }}">
+        <h2> {{ article.title }} </h5>
+             {{ article.createdAt | date("d/m/Y") }} <BR>
+    {% endfor %}    
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
     <div class="articles">
         {% for article in articles %}
             <a href="{{path('app_single_article', {'slug': article.slug} ) }}" class="article-item">
@@ -24,4 +38,11 @@
             </div>
         {% endfor %}   
     </div> 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
 {% endblock %}
