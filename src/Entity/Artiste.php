@@ -3,11 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\ArtisteRepository;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 =======
 >>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
+=======
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+>>>>>>> Stashed changes
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -34,7 +39,10 @@ class Artiste
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     #[ORM\Column()]
     private ?string $description = null;
 
@@ -50,11 +58,14 @@ class Artiste
         $this->chanson = new ArrayCollection();
     }
 
+<<<<<<< Updated upstream
 =======
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
 >>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
+=======
+>>>>>>> Stashed changes
     public function getId(): ?int
     {
         return $this->id;
@@ -131,7 +142,10 @@ class Artiste
 
         return $this;
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 
     public function getType(): ?Type
     {
@@ -168,6 +182,9 @@ class Artiste
 
         return $this;
     }
+<<<<<<< Updated upstream
 =======
 >>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
+=======
+>>>>>>> Stashed changes
 }

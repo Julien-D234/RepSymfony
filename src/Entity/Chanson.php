@@ -3,11 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\ChansonRepository;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 =======
 >>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
+=======
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+>>>>>>> Stashed changes
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -34,7 +39,10 @@ class Chanson
     #[ORM\Column(length: 255)]
     private ?string $photoCouverture = null;
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     #[ORM\ManyToMany(targetEntity: Artiste::class, mappedBy: 'chanson')]
     private Collection $artistes;
 
@@ -43,8 +51,11 @@ class Chanson
         $this->artistes = new ArrayCollection();
     }
 
+<<<<<<< Updated upstream
 =======
 >>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
+=======
+>>>>>>> Stashed changes
     public function getId(): ?int
     {
         return $this->id;
@@ -109,7 +120,10 @@ class Chanson
 
         return $this;
     }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 
     /**
      * @return Collection<int, Artiste>
@@ -137,6 +151,9 @@ class Chanson
 
         return $this;
     }
+<<<<<<< Updated upstream
 =======
 >>>>>>> 238871b21a9a14a406e41aaa7e47d386061676e2
+=======
+>>>>>>> Stashed changes
 }
