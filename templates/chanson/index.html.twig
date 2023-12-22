@@ -22,7 +22,7 @@
             <tr>
                 <td>{{ chanson.id }}</td>
                 <td>{{ chanson.titre }}</td>
-                <td>{{ chanson.dateSortie ? chanson.dateSortie|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ chanson.dateSortie ? chanson.dateSortie|date('Y-m-d') : '' }}</td>
                 <td>{{ chanson.genre }}</td>
                 <td>{{ chanson.langue }}</td>
                 <td><img src={{chanson.photoCouverture}} width="200" height="200" alt="Image de {{chanson.titre}}"></td>

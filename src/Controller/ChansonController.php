@@ -10,16 +10,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/chanson')]
+#[Route('/discotheque')]
 class ChansonController extends AbstractController
 {
-    //#[Route('/', name: 'app_chanson_index', methods: ['GET'])]
-    //public function index(ChansonRepository $chansonRepository): Response
-    //{
-    //    return $this->render('chanson/index.html.twig', [
-    //        'chansons' => $chansonRepository->findAll(),
-    //    ]);
-    //}
+    #[Route('/', name: 'app_chanson_index', methods: ['GET'])]
+    public function index(ChansonRepository $chansonRepository): Response
+    {
+        return $this->render('chanson/index.html.twig', [
+            'chansons' => $chansonRepository->findAll(),
+        ]);
+    }
 
     #[Route('/new', name: 'app_chanson_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ChansonRepository $chansonRepository): Response
@@ -60,7 +60,7 @@ class ChansonController extends AbstractController
             return $this->redirectToRoute('app_chanson_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('chanson/edit.html.twig', [
+        return $this->render('chanson/edit.html.twig', [
             'chanson' => $chanson,
             'form' => $form,
         ]);

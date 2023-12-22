@@ -21,7 +21,7 @@ class ChansonType extends AbstractType
                 'label' => false,
                 'attr'  => ['placeholder'   =>  'Le titre ...']
             ])
-            ->add('dateSortie', DateType::class, ['input'   =>  'datetime_immutable'])
+            ->add('dateSortie', DateType::class)
             ->add('genre', TextType::class)
             ->add('langue', TextType::class)
             ->add('photoCouverture', UrlType::class, ['required' => false])

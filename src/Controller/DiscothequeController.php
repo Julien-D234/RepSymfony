@@ -9,12 +9,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DiscothequeController extends AbstractController
 {
-    #[Route('/discotheque', name: 'app_chanson_index')]
-    public function index(ChansonRepository $chansonRepository): Response
-    {
-        return $this->render('chanson/index.html.twig', [
-            'chansons' => $chansonRepository->findAll(),
-        ]);
-    }
+    //#[Route('/discotheque', name: 'app_chanson_index')]
+    //public function index(ChansonRepository $chansonRepository): Response
+    //{
+    //    return $this->render('chanson/index.html.twig', [
+    //        'chansons' => $chansonRepository->findAll(),
+    //    ]);
+    //}
 
 }
