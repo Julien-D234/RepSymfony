@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use EsperoSoft\DateFormat\DateFormat;
+use Cocur\Slugify\Slugify;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
@@ -37,6 +39,11 @@ class Article
 
     #[ORM\ManyToMany(targetEntity: Category::class)]
     private Collection $categories;
+
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
+
+    private ?string $fromNow = null;
 
     public function __construct()
     {
@@ -140,6 +147,34 @@ class Article
     public function removeCategory(Category $category): self
     {
         $this->categories->removeElement($category);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fromNow
+     */ 
+    public function getFromNow() : string
+    {
+        return DateFormat::fromNow($this->createdAt);
+    }
+
+    /**
+     * Get the value of slug
+     */ 
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set the value of slug
+     *
+     * @return  self
+     */ 
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
 
         return $this;
     }
